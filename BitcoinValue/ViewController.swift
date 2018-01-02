@@ -18,33 +18,30 @@ class ViewController: UIViewController {
             // dataTask é uma tarefa que fica executando até conseguir um retorno, sucesso ou erro.
             let tarefa = URLSession.shared.dataTask(with: url, completionHandler: { (dados, requisicao, erro) in
                 if erro == nil {
-                    print("SUCESSO ao fazer a consulta.")
+                    print("SUCESS")
                     
                     if let dadosRetorno = dados {
                         
                         do {
                             //options: [] -> significa que no JSON não será aplicado nenhum formato
-                            let objetoJson = try JSONSerialization.jsonObject(with: dadosRetorno, options: [])
-                            print(objetoJson)
-
+                            if let objetoJson = try JSONSerialization.jsonObject(with: dadosRetorno, options: []) as? [String: Any] {
+                                if let brl = objetoJson["BRL"] as? [String: Any] {
+                                    if let precoBRL = brl["buy"] as? Float {
+                                        print(precoBRL)
+                                    }
+                                }
+                            }
                         } catch {
-                            print("ERRO ao formatar o retorno de dados!")
+                            print("ERROR")
                         }
                     }
-                    
                 } else {
                     print("ERRO ao fazer a consulta")
                 }
             })
             // metodo resume é quem inicia a tarefa.
             tarefa.resume()
-            
         }
-        
-
     }
-
-
-
 }
 
