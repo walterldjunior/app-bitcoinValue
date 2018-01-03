@@ -23,7 +23,7 @@ class ViewController: UIViewController {
                     if let dadosRetorno = dados {
                         
                         do {
-                            //options: [] -> significa que no JSON não será aplicado nenhum formato
+                            //options: [] -> significa que no JSON não será aplicado sem nenhum formato
                             if let objetoJson = try JSONSerialization.jsonObject(with: dadosRetorno, options: []) as? [String: Any] {
                                 if let brl = objetoJson["BRL"] as? [String: Any] {
                                     if let precoBRL = brl["buy"] as? Float {
