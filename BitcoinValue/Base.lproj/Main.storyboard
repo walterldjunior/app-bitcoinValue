@@ -32,16 +32,19 @@
                                             <constraint firstAttribute="height" constant="100" id="LEn-pl-4kr"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQD-5q-jZN">
-                                        <rect key="frame" x="0.0" y="100" width="300" height="66"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="55"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQD-5q-jZN">
+                                        <rect key="frame" x="0.0" y="100" width="300" height="54"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="45"/>
                                         <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McN-9k-F0F">
-                                        <rect key="frame" x="0.0" y="166" width="300" height="66"/>
+                                        <rect key="frame" x="0.0" y="154" width="300" height="78"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Atualizar"/>
+                                        <connections>
+                                            <action selector="atualizarPreco:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rMS-LX-1oJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -57,6 +60,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="botaoAtualizar" destination="McN-9k-F0F" id="L4v-UE-0zI"/>
+                        <outlet property="precoBitcoin" destination="TQD-5q-jZN" id="Rgs-9R-glS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
